@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: clicknbuy
-          image: ghcr.io/jenith-datatemplate/java-devsecops-pipeline:sha-b889e92d0e883f5bec67ba5789ff0290c57fa1e3
+          image: ghcr.io/jenith-datatemplate/java-devsecops-pipeline:sha-d93d37bf9910d537c2f154a34541f069fa97e681
           imagePullPolicy: Always
           ports:
             - containerPort: 5454
