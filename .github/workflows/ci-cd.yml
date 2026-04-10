@@ -51,7 +51,7 @@ jobs:
             -Dsonar.projectKey=clicknbuy \
             -Dsonar.projectName=ClickNBuy \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
             -DskipTests=true \
             -B
         continue-on-error: true
