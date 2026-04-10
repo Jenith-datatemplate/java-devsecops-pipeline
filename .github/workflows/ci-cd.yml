@@ -48,7 +48,7 @@ jobs:
       - name: SonarQube scan
         run: |
           mvn verify sonar:sonar \
-            -Dsonar.projectKey=clicknbuy \
+            -Dsonar.projectKey=ClickNBuy \
             -Dsonar.projectName=ClickNBuy \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
