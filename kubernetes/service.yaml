@@ -5,10 +5,11 @@ metadata:
   labels:
     app: clicknbuy
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 80
       targetPort: 5454
+      nodePort: 30080
       protocol: TCP
       name: http
   selector:
