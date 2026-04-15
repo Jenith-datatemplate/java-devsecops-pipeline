@@ -177,9 +177,9 @@ jobs:
         run: git pull origin main || true
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f kubernetes/deployment.yaml --validate=false
-          kubectl rollout restart deployment clicknbuy
-          kubectl rollout status deployment clicknbuy --timeout=180s
+          kubectl apply -f kubernetes/deployment.yaml --validate=false --insecure-skip-tls-verify
+          kubectl rollout restart deployment clicknbuy --insecure-skip-tls-verify
+          kubectl rollout status deployment clicknbuy --timeout=180s --insecure-skip-tls-verify
           echo "Deployment successful!"
       - name: Verify deployment
         run: |
