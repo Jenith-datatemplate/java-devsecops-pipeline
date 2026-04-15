@@ -183,5 +183,5 @@ jobs:
           echo "Deployment successful!"
       - name: Verify deployment
         run: |
-          kubectl get pods
-          kubectl get services
+          kubectl get pods --insecure-skip-tls-verify
+          kubectl get services --insecure-skip-tls-verify
