@@ -179,7 +179,7 @@ jobs:
         run: |
           kubectl apply -f kubernetes/deployment.yaml --validate=false
           kubectl rollout restart deployment clicknbuy
-          kubectl rollout status deployment clicknbuy --timeout=120s
+          kubectl rollout status deployment clicknbuy --timeout=180s
           echo "Deployment successful!"
       - name: Verify deployment
         run: |
