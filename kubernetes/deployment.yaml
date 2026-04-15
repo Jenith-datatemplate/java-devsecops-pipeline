@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: clicknbuy
-          image: ghcr.io/jenith-datatemplate/clicknbuy:v1.0.30
+          image: ghcr.io/jenith-datatemplate/clicknbuy:v1.0.31
           imagePullPolicy: Always
           ports:
             - containerPort: 5454
