@@ -12,7 +12,7 @@ jobs:
 
   sonarqube:
     name: SonarQube Scan
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
 
   build:
     name: Build JAR
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [sonarqube]
     steps:
       - name: Checkout code
@@ -58,7 +58,7 @@ jobs:
 
   docker:
     name: Docker Build and Push
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [build]
     env:
       REGISTRY: ghcr.io
@@ -132,7 +132,7 @@ jobs:
 
   update-k8s:
     name: Update Kubernetes Deployment
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [docker]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
@@ -160,7 +160,7 @@ jobs:
 
   deploy:
     name: Deploy to Kubernetes
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [update-k8s]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
