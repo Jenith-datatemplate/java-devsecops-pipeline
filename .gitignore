@@ -3,4 +3,3 @@ target/
 .idea/
 kubernetes/secret.yaml
 *.env
-.env
