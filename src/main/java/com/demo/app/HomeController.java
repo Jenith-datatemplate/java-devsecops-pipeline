@@ -31,7 +31,7 @@ public class HomeController {
             + "<body>"
             + "<nav class='navbar'><h1>ClickNBuy</h1><span>DevSecOps Demo</span></nav>"
             + "<div class='hero'>"
-            + "<h2>Welcome to ClickNBuyyyyyyyyyyyyyyyy!</h2>"
+            + "<h2>Welcome to ClickNBuy</h2>"
             + "<p>Your one-stop shop for amazing products</p>"
             + "<div class='badge'>Live on Kubernetes</div>"
             + "</div>"
