@@ -41,7 +41,7 @@ public class HomeController {
             + "</style></head>"
 
             + "<body>"
-            + "<nav class='navbar'><h1>ClickNBuy</h1><span>DevSecOps Demo</span></nav>"
+            + "<nav class='navbar'><h1>ClickNBuyyyy</h1><span>DevSecOps Demo</span></nav>"
 
             + "<div class='hero'>"
             + "<h2>Luxury Shopping Experience</h2>"
