@@ -38,7 +38,8 @@ spec:
             httpGet:
               path: /health
               port: 5454
-            initialDelaySeconds: 60
+            initialDelaySeconds: 40
             periodSeconds: 5
+      terminationGracePeriodSeconds: 30
       imagePullSecrets:
         - name: github-container-registry
