@@ -35,31 +35,10 @@ jobs:
             -B
         continue-on-error: true
 
-  build:
-    name: Build JAR
-    runs-on: self-hosted
-    needs: [sonarqube]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: 'maven'
-      - name: Build JAR
-        run: mvn clean package -DskipTests -B
-      - name: Upload JAR artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-jar
-          path: target/*.jar
-
   docker:
     name: Docker Build and Push
     runs-on: self-hosted
-    needs: [build]
+    needs: [sonarqube]
     env:
       REGISTRY: ghcr.io
       IMAGE_NAME: jenith-datatemplate/clicknbuy
