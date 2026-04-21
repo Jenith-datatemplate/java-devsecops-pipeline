@@ -156,6 +156,7 @@ jobs:
         run: |
           git add kubernetes/deployment.yaml
           git commit -m "Update deployment image tag: ${{ needs.docker.outputs.image_tag }} [skip ci]" || echo "No changes to commit"
+          git pull --rebase origin main
           git push
 
   deploy:
@@ -174,7 +175,7 @@ jobs:
         run: |
           kubectl apply -f kubernetes/deployment.yaml -n clicknbuy-ns
           kubectl rollout restart deployment clicknbuy -n clicknbuy-ns
-          kubectl rollout status deployment clicknbuy -n clicknbuy-ns --timeout=300s
+          kubectl rollout status deployment clicknbuy -n clicknbuy-ns --timeout=600s
           echo "Deployment successful!"
 
       - name: Verify deployment
